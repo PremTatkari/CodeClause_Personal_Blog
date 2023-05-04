@@ -1,0 +1,14 @@
+<%- include('partials/header'); -%>
+<h1>Articles</h1>
+<p><%= homeContent %></p>
+<div class="middle-container">
+<% articles.forEach(function (article) { %>
+    <h1><%= article.title %></h1>
+    <% if(article.post.length > 100) { %>
+       <% const post = article.post.substring(0, 100) + "..."; %>
+    <p><%= post %><a href="/articles/<%= article.title %>">Read more</a></p>
+    <% }else{ %>
+        <p><%= article.post %></p>  
+    <% } %>
+<% }); %> 
+</div>
